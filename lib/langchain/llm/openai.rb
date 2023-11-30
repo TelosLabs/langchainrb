@@ -132,9 +132,10 @@ module Langchain::LLM
       if functions
         parameters[:functions] = functions
       else
-        parameters[:max_tokens] = validate_max_tokens(parameters[:messages], parameters[:model], parameters[:max_tokens])
+        # parameters[:max_tokens] = validate_max_tokens(parameters[:messages], parameters[:model], parameters[:max_tokens])
+        parameters[:max_tokens] = 2000
       end
-
+ 
       response = with_api_error_handling { client.chat(parameters: parameters) }
       response = response_from_chunks if block
       Langchain::LLM::OpenAIResponse.new(response)
@@ -166,7 +167,8 @@ module Langchain::LLM
       Langchain.logger.warn "DEPRECATION WARNING: The model #{parameters[:model]} is deprecated. Please use gpt-3.5-turbo instead. Details: https://platform.openai.com/docs/deprecations/2023-07-06-gpt-and-embeddings"
 
       parameters[:prompt] = prompt
-      parameters[:max_tokens] = validate_max_tokens(prompt, parameters[:model])
+      # parameters[:max_tokens] = validate_max_tokens(prompt, parameters[:model])
+      parameters[:max_tokens] = 2000
 
       response = with_api_error_handling do
         client.completions(parameters: parameters)
