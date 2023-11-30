@@ -69,7 +69,8 @@ module Langchain::LLM
       return legacy_complete(prompt, parameters) if is_legacy_model?(parameters[:model])
 
       parameters[:messages] = compose_chat_messages(prompt: prompt)
-      parameters[:max_tokens] = validate_max_tokens(parameters[:messages], parameters[:model], parameters[:max_tokens])
+      # parameters[:max_tokens] = validate_max_tokens(parameters[:messages], parameters[:model], parameters[:max_tokens])
+      parameters[:max_tokens] = 2000
 
       response = with_api_error_handling do
         client.chat(parameters: parameters)
