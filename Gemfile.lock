@@ -16,7 +16,6 @@ PATH
       json-schema (~> 4.0.0)
       matrix
       pragmatic_segmenter (~> 0.3.0)
-      tiktoken_ruby (~> 0.0.5)
       to_bool (~> 2.0.0)
       zeitwerk (~> 2.5)
 
@@ -240,7 +239,6 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
-    rb_sys (0.9.82)
     rdiscount (2.2.7)
     regexp_parser (2.8.0)
     replicate-ruby (0.2.3)
@@ -312,11 +310,6 @@ GEM
     standardrb (1.0.1)
       standard
     thor (1.2.1)
-    tiktoken_ruby (0.0.6)
-      rb_sys (~> 0.9.68)
-    tiktoken_ruby (0.0.6-arm64-darwin)
-    tiktoken_ruby (0.0.6-x86_64-darwin)
-    tiktoken_ruby (0.0.6-x86_64-linux)
     to_bool (2.0.0)
     treetop (1.6.12)
       polyglot (~> 0.3)

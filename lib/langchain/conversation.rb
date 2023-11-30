@@ -85,9 +85,13 @@ module Langchain
 
     def llm_response
       @llm.chat(messages: @memory.messages.map(&:to_h), context: @memory.context&.to_s, examples: @memory.examples.map(&:to_h), **@options, &@block)
-    rescue Langchain::Utils::TokenLength::TokenLimitExceeded => exception
-      @memory.reduce_messages(exception)
-      retry
+
+      # Commented out because underlying token library is not thread safe.
+      # See: https://github.com/IAPark/tiktoken_ruby/issues/8
+      # See: https://github.com/sidekiq/sidekiq/issues/6084
+    # rescue Langchain::Utils::TokenLength::TokenLimitExceeded => exception
+    #   @memory.reduce_messages(exception)
+    #   retry
     end
   end
 end

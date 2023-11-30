@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "tiktoken_ruby"
-
 module Langchain
   module Utils
     module TokenLength
@@ -56,8 +54,12 @@ module Langchain
         # @return [Integer] The token length of the text
         #
         def self.token_length(text, model_name, options = {})
-          encoder = Tiktoken.encoding_for_model(model_name)
-          encoder.encode(text).length
+          0
+          # Commented out because this library is not thread safe.
+          # See: https://github.com/IAPark/tiktoken_ruby/issues/8
+          # See: https://github.com/sidekiq/sidekiq/issues/6084
+          # encoder = Tiktoken.encoding_for_model(model_name)
+          # encoder.encode(text).length
         end
 
         def self.token_limit(model_name)
