@@ -6,7 +6,7 @@ module Langchain
       attr_reader :examples, :messages
 
       # The least number of tokens we want to be under the limit by
-      TOKEN_LEEWAY = 20
+      TOKEN_LEEWAY = 100
 
       def initialize(llm:, messages: [], **options)
         @llm = llm
