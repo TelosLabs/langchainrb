@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "tiktoken_ruby"
-
 module Langchain
   module Utils
     module TokenLength
@@ -58,8 +56,8 @@ module Langchain
         # @return [Integer] The token length of the text
         #
         def self.token_length(text, model_name, options = {})
-          encoder = Tiktoken.encoding_for_model(model_name)
-          encoder.encode(text).length
+          # Use rough token count instead of Tiktoken due to a thread safety issue
+          OpenAI.rough_token_count(text)
         end
 
         def self.token_limit(model_name)
