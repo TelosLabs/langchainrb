@@ -13,8 +13,10 @@ module Langchain
           # Source:
           # https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo
           "gpt-4-1106-preview" => 4096,
+          "gpt-4-0125-preview" => 4096,
           "gpt-4-vision-preview" => 4096,
-          "gpt-3.5-turbo-1106" => 4096
+          "gpt-3.5-turbo-1106" => 4096,
+          "gpt-3.5-turbo-0125" => 4096
         }
 
         TOKEN_LIMITS = {
@@ -26,6 +28,7 @@ module Langchain
           "gpt-3.5-turbo-0301" => 4096,
           "gpt-3.5-turbo-0613" => 4096,
           "gpt-3.5-turbo-1106" => 16385,
+          "gpt-3.5-turbo-0125" => 16385,
           "gpt-3.5-turbo-16k" => 16384,
           "gpt-3.5-turbo-16k-0613" => 16384,
           "text-davinci-003" => 4097,
@@ -38,6 +41,7 @@ module Langchain
           "gpt-4-32k-0314" => 32768,
           "gpt-4-32k-0613" => 32768,
           "gpt-4-1106-preview" => 128000,
+          "gpt-4-0125-preview" => 128000,
           "gpt-4-vision-preview" => 128000,
           "text-curie-001" => 2049,
           "text-babbage-001" => 2049,
