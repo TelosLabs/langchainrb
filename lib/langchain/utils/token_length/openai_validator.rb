@@ -14,6 +14,8 @@ module Langchain
           # https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo
           "gpt-4-1106-preview" => 4096,
           "gpt-4-0125-preview" => 4096,
+	  "gpt-4-turbo" => 4096,
+	  "gpt-4-turbo-2024-04-09" => 4096,
           "gpt-4-vision-preview" => 4096,
           "gpt-3.5-turbo-1106" => 4096,
           "gpt-3.5-turbo-0125" => 4096
@@ -43,6 +45,8 @@ module Langchain
           "gpt-4-1106-preview" => 128000,
           "gpt-4-0125-preview" => 128000,
           "gpt-4-vision-preview" => 128000,
+	  "gpt-4-turbo" => 128000,
+	  "gpt-4-turbo-2024-04-09" => 128000,
           "text-curie-001" => 2049,
           "text-babbage-001" => 2049,
           "text-ada-001" => 2049,
